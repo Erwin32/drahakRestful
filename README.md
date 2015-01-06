@@ -1,4 +1,4 @@
-Nette REST API
+Nette REST API by Drahak
 ==============
 This repository is being developed.
 
