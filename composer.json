@@ -1,5 +1,5 @@
 {
-	"name": "Erwin32/drahakRestful",
+	"name": "erwin32/drahak-restful",
 	"type": "library",
 	"description": "Nette REST API bundle",
 	"keywords": ["nette", "rest", "api", "drahak"],
