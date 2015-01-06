@@ -1,0 +1,39 @@
+{
+	"name": "Erwin32/drahakRestful",
+	"type": "library",
+	"description": "Nette REST API bundle",
+	"keywords": ["nette", "rest", "api", "drahak"],
+	"homepage": "http://www.drahak.eu",
+	"license": ["BSD-3-Clause", "GPL-2.0", "GPL-3.0"],
+	"authors": [
+		{
+			"name": "Drahomír Hanák",
+			"homepage": "http://www.drahak.eu"
+		}
+	],
+	"config": {
+		"vendor-dir": "libs"
+	},
+	"require": {
+		"php": ">= 5.3.0",
+
+		"nette/nette": "@dev"
+	},
+	"require-dev": {
+		"drahak/oauth2": "dev-master",
+		"nette/tester": "dev-master",
+		"janmarek/mockista": "dev-master"
+	},
+	"autoload": {
+		"psr-0": {
+			"Drahak\\Restful": "src/"
+		},
+		"classmap": [
+			"src/Drahak/Restful/exceptions.php",
+			"src/Drahak/Restful/Application/exceptions.php",
+			"src/Drahak/Restful/Mapping/exceptions.php",
+			"src/Drahak/Restful/Security/exceptions.php",
+			"src/Drahak/Restful/Validation/exceptions.php"
+		]
+	}
+}

@@ -1,0 +1,40 @@
+<div id="drahak-panel">
+	<h1>Drahak Restful panel</h1>
+
+	<!-- Data string representation -->
+	<div id="drahak-panel-resources">
+		<table>
+			<thead>
+			<tr>
+				<th>Method</th>
+				<th>URL Mask</th>
+				<th>Presenter</th>
+				<th>Action</th>
+			</tr>
+			</thead>
+			<tbody>
+			<?php foreach ($routes as $route) : ?>
+				<?php foreach ($methods as $method => $name) : ?>
+				<?php if (!$route->isMethod($method)) continue; ?>
+				<?php if ($route->actionDictionary && !isset($route->actionDictionary[$method])) continue; ?>
+				<tr>
+					<th><?php echo $esc($name); ?></th>
+					<td><pre><?php echo $esc($route->mask); ?></pre></td>
+					<td>
+						<?php echo isset($route->defaults['presenter']) ?
+							$route->defaults['presenter'] :
+							''; ?></td>
+					<td>
+						<?php
+						echo isset($route->actionDictionary[$method]) ?
+							$route->actionDictionary[$method] :
+							(isset($route->defaults['action']) ? $route->defaults['action'] : '');
+						?>
+					</td>
+				</tr>
+				<?php endforeach; ?>
+			<?php endforeach; ?>
+			</tbody>
+		</table>
+	</div>
+</div>
